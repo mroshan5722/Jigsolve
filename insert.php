@@ -24,7 +24,8 @@
 			'$Email','$Mobile')";
 		
 		if(mysqli_query($conn, $sql)){
-            echo "Contact Records Inserted";
+			echo "<html><body>";
+			echo "<html><body>";
 		}
 		
 		// Close connection
