@@ -24,8 +24,7 @@
 			'$Email','$Mobile')";
 		
 		if(mysqli_query($conn, $sql)){
-			echo "<html><body>";
-			echo "<html><body>";
+			echo "SUCCESS";
 		}
 		
 		// Close connection
