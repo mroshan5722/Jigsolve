@@ -157,14 +157,19 @@
         </script> -->
     </head>
     <body>
+        <ul class = "navbar">
+            <div class = "countdown">00:<span class = "timer">00</span></div>
+            <div class = "score">score</div>
+        </ul>
         <div class = "container">
             <div class = "puzzle_container"></div>
             <div class="piece_container"></div>
             <ul class="buttons">
-                <li><button class="start">Start</button></li>
-                <li><button class="reset">Reset</button></li>
+                <li><button class="start" onclick="start()">Start</button></li>
+                <li><button class="reset" onclick="gameOver()">Reset</button></li>
             </ul>
         </div>
        <script src="game.js"></script>
+       <script src="countdown.js"></script>
     </body>
 </html>

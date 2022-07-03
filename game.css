@@ -4,6 +4,8 @@
     border-radius: 20px;
     margin: 10px auto;
     padding: 10px;
+    position: relative;
+    top: 60px;
 }
 .piece_container{
     position: relative;
@@ -44,4 +46,20 @@ margin-top: 10px;
     float: left;
     background-image:url(wolf.jpg);
     background-repeat: no-repeat;
+}
+/* .navbar{
+    font-size: 30px;
+} */
+
+.countdown{
+    position: relative;
+    float: right;
+    left: -30px;
+    font-size: 30px;
+}
+
+.score{
+    position: relative;
+    float: left;
+    font-size: 30px;
 }
