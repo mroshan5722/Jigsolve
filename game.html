@@ -3,7 +3,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link ref = "spreadsheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.min.css"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <style>
+        <link rel="stylesheet" href="game.css">
+        <!-- <style>
             .container{
                 width: 850px;
                 border: 2px solid black;
@@ -51,22 +52,14 @@
                 background-image:url(wolf.jpg);
                 background-repeat: no-repeat;
             }
-        </style>
-        <script>
-            //when page load, create 16 divs using nested loops
+        </style> -->
+        <!-- <script> 
             $(document).ready(function(){
-                var rows = 4, cols = 4;
-                var pieces = "";
-                //top,left = position of peice
-                //order = order of peices in grid 
-                for (var i=0, top=0, order = 0; i<rows; i++, top-=100){
-                    for (var j=0, left=0; j<cols; j++, left-=100,order++){
-                        pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece' data-order=" + order + "></div>";
-                    }
-                }
-                 $(".puzzle_container").html(pieces);
+                //create 16 divs using nested loops (pieces)
+                var pieces = createPieces(true);
+                $(".puzzle_container").html(pieces);
                  //when start button is clicked, shuffle pieces to piece container
-                 $(".start").click(function(){
+                $(".start").click(function(){
                     var pieces = $(".puzzle_container div");
                     pieces.each(function(){
                         var leftPosition = Math.floor(Math.random()*290) + "px";
@@ -78,13 +71,8 @@
                         })
                         $(".piece_container").append($(this));
                     });
-                    //create grid in puzzle container
-                    var empty = ""
-                    for (var i=0; i<rows; i++){
-                        for (var j=0; j<cols; j++){
-                            empty += "<div style ='background-image:none;' class = 'piece droppable'></div>";
-                        }
-                    }
+                    //create grid in puzzle container (empty pieces)
+                    var empty = createPieces(false)
                     //hide start buttona nd show reset button
                     $(".puzzle_container").html(empty);
                     $(this).hide();
@@ -93,9 +81,28 @@
                 }); 
                 //when reset button is clicked
                 $(".reset").click(function(){
+                    var newPieces = createPieces(true);
+                    $(".puzzle_container").html(newPieces);
                     $(this).hide();
                     $(".start").show();
+                    $(".piece_container").empty();
                 });
+                function createPieces(withImage){
+                    var rows = 4, cols = 4;
+                    var pieces = "";
+                        //top,left = position of peice
+                        //order = order of peices in grid 
+                    for (var i=0, top=0, order = 0; i<rows; i++, top-=100){
+                        for (var j=0, left=0; j<cols; j++, left-=100,order++){
+                            if (withImage){
+                                pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece' data-order=" + order + "></div>";
+                            }
+                            else{
+                                pieces += "<div style ='background-image:none;' class = 'piece droppable'></div>";
+                            }
+                        }
+                    } return pieces;
+                }
                 //checking if puzzle solved
                 function puzzleSolved(){
                     if($(".puzzle_container .droppedPiece").length !=16){
@@ -127,7 +134,7 @@
                         }
                     });
                     $(".droppable").droppable({
-                        hoverClass:"ui-state-highlight", //research and fix later ----> highlighst cells when piece hovers over it
+                        hoverClass:"ui-state-highlight", //research and fix later  highlighst cells when piece hovers over it
                         //no overlapping of pieces
                         accept:function(){
                             return !$(this).hasClass("piecePresent")
@@ -147,7 +154,7 @@
                     });
                 }
             });
-        </script>
+        </script> -->
     </head>
     <body>
         <div class = "container">
@@ -158,6 +165,6 @@
                 <li><button class="reset">Reset</button></li>
             </ul>
         </div>
-       
+       <script src="game.js"></script>
     </body>
 </html>
