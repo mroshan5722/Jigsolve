@@ -57,9 +57,11 @@
             $(document).ready(function(){
                 var rows = 4, cols = 4;
                 var pieces = "";
-                for (var i=0, top=0; i<rows; i++, top-=100){
-                    for (var j=0, left=0; j<cols; j++, left-=100){
-                        pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece'></div>";
+                //top,left = position of peice
+                //order = order of peices in grid 
+                for (var i=0, top=0, order = 0; i<rows; i++, top-=100){
+                    for (var j=0, left=0; j<cols; j++, left-=100,order++){
+                        pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece' data-order=" + order + "></div>";
                     }
                 }
                  $(".puzzle_container").html(pieces);
@@ -94,10 +96,35 @@
                     $(this).hide();
                     $(".start").show();
                 });
+                //checking if puzzle solved
+                function puzzleSolved(){
+                    if($(".puzzle_container .droppedPiece").length !=16){
+                        return false;
+                    }
+                    //item = each dropped puzzle piece
+                    //order = order of each piece
+                    for(var k=0; k<16; k++){
+                        var item = $(".puzzle_container .droppedPiece:eq(" + k +")");
+                        var order = item.data("order")
+                        //if pieces not in order
+                        if(k!=order){
+                            $(".piece_container").text("try again");
+                            return false;
+                        }
+                    }
+                    $(".piece_container").text("Success")
+                    return true;
+                }
                 //creating draggable and droppable elements
                 function implementLogic(){
                     $(".draggable").draggable({
                         revert:"invalid",
+                        start:function(){
+                            if($(this).hasClass("droppedPiece" )){
+                                $(this).removeClass("droppedPiece")
+                                $(this).parent().removeClass("piecePresent")
+                            }
+                        }
                     });
                     $(".droppable").droppable({
                         hoverClass:"ui-state-highlight", //research and fix later ----> highlighst cells when piece hovers over it
@@ -115,6 +142,7 @@
                                 left:0,
                                 position:"relative"
                             }).appendTo(droppedOn);
+                            puzzleSolved();
                         }
                     });
                 }
