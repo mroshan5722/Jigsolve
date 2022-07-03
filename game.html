@@ -12,8 +12,8 @@
                 padding: 10px;
             }
             .piece_container{
-                width: 400px;
-                height: 400px;
+                width: 406px;
+                height: 406px;
                 border: 1px solid black;
                 float: left;
                 text-align: center;
@@ -21,8 +21,8 @@
                 line-height: 400px;
             }
             .puzzle_container{
-                width: 400px;
-                height: 400px;
+                width: 406px;
+                height: 406px;
                 border: 1px solid black;
                 float: right;
             }
@@ -38,19 +38,32 @@
             padding: 5px;
             margin-top: 10px;
             }
-            
+
             .reset{
                 display: none;
             }
-            /* .game{
-                align-self: center;
-                padding: 0px 0px;
-                box-sizing: border-box;
-                border: 2px solid #ed802d;
-                width: 400px;
-                height: 400px;
-            } */
+            .piece{
+                width: 100px;
+                height: 100px;
+                border: 0.5px solid rgba(56, 56, 56, 0.082);
+                float: left;
+                background-image:url(wolf.jpg);
+                background-repeat: no-repeat;
+            }
         </style>
+        <script>
+            $(document).ready(function(){
+                var rows = 4, cols = 4;
+                var pieces = "";
+                for (var i=0, top=0; i<rows; i++, top-=100){
+                    for (var j=0, left=0; j<cols; j++, left-=100){
+                        pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece'></div>";
+                    }
+                }
+                console.log(pieces); 
+                 $(".puzzle_container").html(pieces);
+            });
+        </script>
     </head>
     <body>
         <div class = "container">
