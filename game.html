@@ -1,8 +1,8 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link ref = "spreadsheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/themes/trontastic/jquery-ui.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
+        <link ref = "spreadsheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.min.css"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <style>
             .container{
                 width: 850px;
@@ -53,6 +53,7 @@
             }
         </style>
         <script>
+            //when page load, create 16 divs using nested loops
             $(document).ready(function(){
                 var rows = 4, cols = 4;
                 var pieces = "";
@@ -62,6 +63,7 @@
                     }
                 }
                  $(".puzzle_container").html(pieces);
+                 //when start button is clicked, shuffle pieces to piece container
                  $(".start").click(function(){
                     var pieces = $(".puzzle_container div");
                     pieces.each(function(){
@@ -74,20 +76,36 @@
                         })
                         $(".piece_container").append($(this));
                     });
+                    //create grid in puzzle container
                     var empty = ""
                     for (var i=0; i<rows; i++){
-                    for (var j=0; j<cols; j++){
-                        empty += "<div style ='background-image:none;' class = 'piece droppable'></div>";
+                        for (var j=0; j<cols; j++){
+                            empty += "<div style ='background-image:none;' class = 'piece droppable'></div>";
+                        }
                     }
-                }
-                $(".puzzle_container").html(empty);
-                $(this).hide();
-                $(".reset").show();
-                implementLogic();
-                 }); 
-                 function implementLogic(){
-                    $(".draggable").draggable();
+                    //hide start buttona nd show reset button
+                    $(".puzzle_container").html(empty);
+                    $(this).hide();
+                    $(".reset").show();
+                    implementLogic();
+                }); 
+                //when reset button is clicked
+                $(".reset").click(function(){
+                    $(this).hide();
+                    $(".start").show();
+                });
+                //creating draggable and droppable elements
+                function implementLogic(){
+                    $(".draggable").draggable({
+                        revert:"invalid",
+                    });
                     $(".droppable").droppable({
+                        hoverClass:"ui-state-highlight", //research and fix later ----> highlighst cells when piece hovers over it
+                        //no overlapping of pieces
+                        accept:function(){
+                            return !$(this).hasClass("piecePresent")
+                        },
+                        //autodrop pieces into place when dragged over grid
                         drop:function(event,ui){
                             var draggableElement = ui.draggable;
                             var droppedOn = $(this);
