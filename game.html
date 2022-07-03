@@ -158,18 +158,19 @@
     </head>
     <body>
         <ul class = "navbar">
-            <div class = "countdown">00:<span class = "timer">00</span></div>
-            <div class = "score">score</div>
+            <div class = "countdown">00:<span id = "time" class = "timer">00</span></div>
+            <div class = "score">Score: 00</div>
         </ul>
         <div class = "container">
             <div class = "puzzle_container"></div>
             <div class="piece_container"></div>
             <ul class="buttons">
                 <li><button class="start" onclick="start()">Start</button></li>
-                <li><button class="reset" onclick="gameOver()">Reset</button></li>
+                <li><button class="reset" onclick="resetTimer()">Reset</button></li>
             </ul>
         </div>
        <script src="game.js"></script>
        <script src="countdown.js"></script>
+       <script src="score.js"></script> 
     </body>
 </html>

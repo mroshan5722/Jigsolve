@@ -1,9 +1,15 @@
 var timer; 
-var timeLeft = 15; 
+var timeLeft = 60; 
 
 // What to do when the timer runs out
 function gameOver() {
   // This cancels the setInterval, so the updateTimer stops getting called
+  clearInterval(timer);
+  // if(puzzleSolved(false))
+  // window.open("google.com")
+}
+
+function resetTimer(){
   clearInterval(timer);
   timeLeft = 60;
 }
@@ -25,5 +31,4 @@ function updateTimer() {
 function start() {
   timer = setInterval(updateTimer, 1000);
   updateTimer();
-  prependZero();
 }

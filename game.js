@@ -60,10 +60,15 @@ $(document).ready(function(){
             //if pieces not in order
             if(k!=order){
                 $(".piece_container").text("try again");
+                window.open("leaderboard.html")
                 return false;
             }
         }
         $(".piece_container").text("Success")
+        gameOver();
+        var newTime = document.getElementById("time").innerHTML;
+        var score = parseInt(newTime) * 3;
+        console.log(score);
         return true;
     }
     //creating draggable and droppable elements
@@ -97,4 +102,9 @@ $(document).ready(function(){
             }
         });
     }
+    // function updateScore(){
+        
+    // }
 });
+
+   
