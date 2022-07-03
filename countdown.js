@@ -1,5 +1,5 @@
 var timer; 
-var timeLeft = 10; 
+var timeLeft = 15; 
 
 // What to do when the timer runs out
 function gameOver() {
@@ -10,28 +10,20 @@ function gameOver() {
 
 function updateTimer() {
   timeLeft = timeLeft - 1;
-  if(timeLeft >= 0)
+  if(timeLeft >= 0){
     $('.timer').html(timeLeft);
+    if (timeLeft <= 9){
+      timeLeft= "0" + timeLeft;
+      $('.timer').html(timeLeft);
+    }
+  }
   else {
     gameOver();
   }
 }
 
-function resetTimer(){
-  timeLift = 60;
-}
-
-// The button has an on-click event handler that calls this
 function start() {
-  // setInterval is a built-in function that will call the given function
-  // every N milliseconds (1 second = 1000 ms)
   timer = setInterval(updateTimer, 1000);
-  
-  // It will be a whole second before the time changes, so we'll call the update
-  // once ourselves
   updateTimer();
-  
-  // We don't want the to be able to restart the timer while it is running,
-  // so hide the button.
-   $('.reset').hide();
+  prependZero();
 }
