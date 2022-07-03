@@ -67,8 +67,10 @@ $(document).ready(function(){
         $(".piece_container").text("Success")
         gameOver();
         var newTime = document.getElementById("time").innerHTML;
-        var score = parseInt(newTime) * 3;
-        console.log(score);
+        var newscore = parseInt(newTime) * 3;
+        // console.log(score);
+        // $("score").html(score);
+        document.getElementById("score").innerHTML = newscore;
         return true;
     }
     //creating draggable and droppable elements
