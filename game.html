@@ -12,6 +12,7 @@
                 padding: 10px;
             }
             .piece_container{
+                position: relative;
                 width: 406px;
                 height: 406px;
                 border: 1px solid black;
@@ -60,8 +61,29 @@
                         pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece'></div>";
                     }
                 }
-                console.log(pieces); 
                  $(".puzzle_container").html(pieces);
+                 $(".start").click(function(){
+                    var pieces = $(".puzzle_container div");
+                    pieces.each(function(){
+                        var leftPosition = Math.floor(Math.random()*290) + "px";
+                        var topPosition = Math.floor(Math.random()*290) + "px";
+                        $(this).css({
+                            position:"absolute",
+                            left:leftPosition,
+                            top:topPosition
+                        })
+                        $(".piece_container").append($(this));
+                    });
+                    var empty = ""
+                    for (var i=0; i<rows; i++){
+                    for (var j=0; j<cols; j++){
+                        empty += "<div style ='background-image:none;' class = 'piece'></div>";
+                    }
+                }
+                $(".puzzle_container").html(empty);
+                $(this).hide();
+                $(".reset").show();
+                 }); 
             });
         </script>
     </head>
