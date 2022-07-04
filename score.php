@@ -1,5 +1,5 @@
 <?php
-		header("Location: leaderboard.php");
+		// header("Location: leaderboard.php");
 		$host = "localhost"; 
         $user = "root"; 
         $pass = ""; 
@@ -14,11 +14,11 @@
 		}
 		
 		// Taking all 5 values from the form data(input)
-		$Score = $_POST['number'];
+		$Score = $_POST['scoreHolder'];
 		
 		// Performing insert query execution
 		// here our table name is college
-		$sql = "INSERT INTO users (score) VALUES ('$Score')";
+		$sql = "INSERT INTO leaderboard VALUES ('id','$Score')";
 		
 		if(mysqli_query($conn, $sql)){
 			echo "SUCCESS";

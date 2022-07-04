@@ -33,7 +33,6 @@ $(document).ready(function(){
     });
 
     $(".submit").click(function(){
-        var num = document.getElementById("score").innerHTML;
     });
 
     function createPieces(withImage){
@@ -70,11 +69,16 @@ $(document).ready(function(){
                 return false;
             }
         }
+        
         $(".piece_container").text("Success");
         $(".reset").hide();
         $(".form").show();
         gameOver();
         updateScore();
+        var num = document.getElementById("score").innerHTML;
+        console.log(num);
+        document.getElementById("scoreHolder").value = num;
+        console.log(scoreHolder.value);
         return true;
     }
     //creating draggable and droppable elements
