@@ -20,8 +20,7 @@
 		
 		// Performing insert query execution
 		// here our table name is college
-		$sql = "INSERT INTO users VALUES ('id','$Name',
-			'$Email','$Mobile')";
+		$sql = "INSERT INTO users (id,name,email,mobile) VALUES ('id','$Name','$Email','$Mobile')";
 		
 		if(mysqli_query($conn, $sql)){
 			echo "SUCCESS";

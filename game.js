@@ -31,6 +31,11 @@ $(document).ready(function(){
         $(".start").show();
         $(".piece_container").empty();
     });
+
+    $(".submit").click(function(){
+        var num = document.getElementById("score").innerHTML;
+    });
+
     function createPieces(withImage){
         var rows = 4, cols = 4;
         var pieces = "";
@@ -66,8 +71,6 @@ $(document).ready(function(){
             }
         }
         $(".piece_container").text("Success");
-        // window.open("leaderboard.php");
-        // document.getElementById("finalScore").innerHTML = newscore;
         $(".reset").hide();
         $(".form").show();
         gameOver();
@@ -114,4 +117,3 @@ $(document).ready(function(){
     
 });
 
-   

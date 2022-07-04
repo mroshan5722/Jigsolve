@@ -43,8 +43,11 @@ body{
 
 }
 .buttons{
+    position: relative;
+    left: -2%;
     list-style-type: none;
     text-align: center;
+    /* display: none; */
 }
 .buttons button{
 width: 200px;
@@ -85,9 +88,11 @@ color: white;
     top: -15px;
 }
 .form{
+    
     display: none;
+    
 }
-.submit{
+input#submit{
     width: 200px;
     border: 2px solid #2f528f;
     font-size: 30px;
