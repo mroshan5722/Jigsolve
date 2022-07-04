@@ -1,5 +1,5 @@
 		<?php
-
+		header("Location: game.html");
 		$host = "localhost"; 
         $user = "root"; 
         $pass = ""; 
