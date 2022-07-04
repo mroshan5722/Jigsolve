@@ -1,6 +1,8 @@
-body{
+html,body{
     font-size: 20px;
     font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
 p{
     text-align: center;
@@ -10,30 +12,49 @@ p{
 }
 .table{
     position: relative;
-    left: 38%;
+    left: 40%;
     top: 50px;
 
 }
-table{
+
+.name{
+    display: inline-block;
     position: relative;
-    border: 2px solid #ed802d;
-    text-align: center;
+    left: 10px;
+    border-top: 2px solid #ed802d;
+    border-bottom: 2px solid #ed802d;
+    border-left: 2px solid #ed802d;
+    text-align:left;
     font-size: 20px;
     padding: 10px;
-    width: 300px;
-    border-radius: 10px;
-
+    width: 120px;
+    /* border-radius: 10px; */
+}
+.score{
+    display: inline-block;
+    position: relative;
+    border-top: 2px solid #ed802d;
+    border-bottom: 2px solid #ed802d;
+    border-right: 2px solid #ed802d;
+    text-align:left;
+    font-size: 20px;
+    padding: 10px;
+    width: 120px;
+    /* border-radius: 10px; */
 }
 button{
     border: 2px solid #2f528f;
     background-color: #4473c4;
     position: relative;
-    left: 50px;
-    top: 10px;
+    /* left: 50px;
+    top: 10px; */
     padding: 15px 20px;
     margin: 10px 0;
     width: 15%;
     border-radius: 40px;
+    /* position: relative; */
+    left: 42.5%;
+    top: 12%;
 }
 a{
     font-family: sans-serif;
@@ -51,6 +72,6 @@ button:active {
     transform: translateY(2px);
 }
 
-table:hover{
-    top:-2px
+.table:hover{
+    top:48px
 }

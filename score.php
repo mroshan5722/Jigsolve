@@ -1,5 +1,5 @@
 <?php
-		// header("Location: leaderboard.php");
+		header("Location: leaderboard.php");
 		$host = "localhost"; 
         $user = "root"; 
         $pass = ""; 
