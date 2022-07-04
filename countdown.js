@@ -5,8 +5,6 @@ var timeLeft = 60;
 function gameOver() {
   // This cancels the setInterval, so the updateTimer stops getting called
   clearInterval(timer);
-  // if(puzzleSolved(false))
-  // window.open("google.com")
 }
 
 function resetTimer(){

@@ -60,17 +60,16 @@ $(document).ready(function(){
             //if pieces not in order
             if(k!=order){
                 $(".piece_container").text("try again");
-                window.open("leaderboard.html")
+                window.open("leaderboardFail.html");
+                gameOver();
                 return false;
             }
         }
-        $(".piece_container").text("Success")
+        $(".piece_container").text("Success");
+        window.open("leaderboard.php");
+        // document.getElementById("finalScore").innerHTML = newscore;
         gameOver();
-        var newTime = document.getElementById("time").innerHTML;
-        var newscore = parseInt(newTime) * 3;
-        // console.log(score);
-        // $("score").html(score);
-        document.getElementById("score").innerHTML = newscore;
+        updateScore();
         return true;
     }
     //creating draggable and droppable elements
@@ -104,9 +103,13 @@ $(document).ready(function(){
             }
         });
     }
-    // function updateScore(){
-        
-    // }
+ 
+    function updateScore(){
+        var newTime = document.getElementById("time").innerHTML;
+        var newscore = parseInt(newTime) * 3;
+        document.getElementById("score").innerHTML = newscore;
+    }
+    
 });
 
    
