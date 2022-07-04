@@ -13,13 +13,13 @@ if ($mysqli->connect_error) {
     $mysqli->connect_error);
 }
 // SQL query to select data from database
-$sql = " SELECT name FROM users ORDER BY ID DESC ";
+$sql = " SELECT name FROM users ORDER BY ID DESC LIMIT 5";
 $names = $mysqli->query($sql);
 
 $sql = " SELECT name FROM users ORDER BY ID DESC LIMIT 1";
 $name = $mysqli->query($sql);
 
-$sql = " SELECT score FROM leaderboard ORDER BY ID DESC";
+$sql = " SELECT score FROM leaderboard ORDER BY ID DESC LIMIT 5";
 $scores = $mysqli->query($sql);
 
 $sql = " SELECT score FROM leaderboard ORDER BY ID DESC LIMIT 1";
@@ -48,7 +48,7 @@ $mysqli->close();
         }
         .table{
             position: relative;
-            left: 40%;
+            left: 35%;
             top: 50px;
 
         }
@@ -63,8 +63,10 @@ $mysqli->close();
             text-align:left;
             font-size: 20px;
             padding: 10px;
-            width: 120px;
-            /* border-radius: 10px; */
+            width: 300px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+
         }
         .score{
             display: inline-block;
@@ -75,9 +77,11 @@ $mysqli->close();
             text-align:left;
             font-size: 20px;
             padding: 10px;
-            width: 120px;
-            /* border-radius: 10px; */
+            width: 100px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
+        
         button{
             border: 2px solid #2f528f;
             background-color: #4473c4;
