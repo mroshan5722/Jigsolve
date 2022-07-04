@@ -5,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
        
              
-        <style>
+        <!-- <style>
         body{
             background-color: rgb(255, 255, 255);
         }
@@ -85,14 +85,14 @@
             top: -15px;
         }
         
-        .score{
+        .scoreboard{
             position: relative;
             float: left;
             font-size: 30px;
             left: 30px;
             top: -15px;
         }
-        </style>
+        </style> -->
         <!-- <script> 
 
             
@@ -197,14 +197,15 @@
                 }
             });
         </script> -->
-    <!-- <link rel="stylesheet" href="game.css"> -->
+    <link rel="stylesheet" href="game.css">
     </head>
     <body>
         <div class = "navbar">
             <!-- <ul> -->
                 <div class = "countdown">00:<span id = "time" class = "timer">00</span></div>
-                <div class = "score">Score: <span id = "score">000</span></div>
+                <div class = "scoreboard">Score: <span id = "score">000</span></div>
             <!-- </ul> -->
+            
         </div>
         <div class = "container">
             <div class = "puzzle_container"></div>
@@ -217,6 +218,9 @@
         <ul class="buttons">
             <li><button class="start" onclick="start()">Start</button></li>
             <li><button class="reset" onclick="resetTimer()">Reset</button></li>
+            <form class = "form" action="score.php" method="post">
+                <input type="submit" id="submit" value="SUBMIT">
+            </form>
         </ul>
 
        <script src="game.js"></script>

@@ -66,8 +66,10 @@ $(document).ready(function(){
             }
         }
         $(".piece_container").text("Success");
-        window.open("leaderboard.php");
+        // window.open("leaderboard.php");
         // document.getElementById("finalScore").innerHTML = newscore;
+        $(".reset").hide();
+        $(".form").show();
         gameOver();
         updateScore();
         return true;

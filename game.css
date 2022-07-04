@@ -77,10 +77,22 @@ color: white;
     top: -15px;
 }
 
-.score{
+.scoreboard{
     position: relative;
     float: left;
     font-size: 30px;
     left: 30px;
     top: -15px;
 }
+.form{
+    display: none;
+}
+.submit{
+    width: 200px;
+    border: 2px solid #2f528f;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #4473c4;
+    color: white;
+    }

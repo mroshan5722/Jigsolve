@@ -18,6 +18,10 @@ if ($mysqli->connect_error) {
 // SQL query to select data from database
 $sql = " SELECT name FROM users ORDER BY ID DESC ";
 $result = $mysqli->query($sql);
+// $mysqli->close();
+
+$sql = " SELECT name FROM users ORDER BY ID DESC LIMIT 1";
+$result1 = $mysqli->query($sql);
 $mysqli->close();
 ?>
 <!-- HTML code to display data in tabular format -->
@@ -60,10 +64,23 @@ $mysqli->close();
 		}
 	</style> -->
     <link rel="stylesheet" href="leaderboard.css">
+    <!-- <script>
+        var b = document.getElementById('').value
+        document.getElementById('here').innerHTML = b;
+    </script> -->
 </head>
-
 <body>
-    <p>Congratulations Player Name! </p>
+    <?php
+    while($rows=$result1->fetch_assoc()){
+        ?>
+    <p>Congratulations 
+        <?php
+            echo $rows['name']
+        ?>
+    ! </p>
+    <?php
+        }
+        ?>
     <p>Your Score is <span id = "finalScore">XXX</span></p>
     <div class = "table">
         <table>
