@@ -1,5 +1,5 @@
 html,body{
-    font-size: 20px;
+    font-size: 26px;
     font-family: sans-serif;
     margin: 0%;
     padding: 0%;
@@ -7,61 +7,47 @@ html,body{
 p{
     text-align: center;
     position: relative;
-    top: 30px;
-    
+    top: 8%;
+    font-size: 30px;
+
 }
 .table{
     position: relative;
-    left: 35%;
+    width: 100%;
     top: 50px;
+    text-align: center;
+    
 
 }
 
-.name{
+table{
+    max-width: 30%;
     display: inline-block;
-    position: relative;
-    left: 10px;
-    border-top: 2px solid #ed802d;
-    border-bottom: 2px solid #ed802d;
-    border-left: 2px solid #ed802d;
+    border: 2px solid #ed802d;
     text-align:left;
-    font-size: 20px;
+    font-size: 26px;
     padding: 10px;
-    width: 300px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
+}
+td{
+    padding-right: 20px;
+}
 
-}
-.score{
-    display: inline-block;
-    position: relative;
-    border-top: 2px solid #ed802d;
-    border-bottom: 2px solid #ed802d;
-    border-right: 2px solid #ed802d;
-    text-align:left;
-    font-size: 20px;
-    padding: 10px;
-    width: 100px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
 button{
     border: 2px solid #2f528f;
     background-color: #4473c4;
     position: relative;
-    /* left: 50px;
-    top: 10px; */
     padding: 15px 20px;
     margin: 10px 0;
     width: 15%;
     border-radius: 40px;
-    /* position: relative; */
     left: 42.5%;
-    top: 12%;
+    top: 17%;
 }
+
 a{
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 26px;
     text-decoration: none;
     color: white;
 }

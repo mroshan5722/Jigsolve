@@ -31,8 +31,8 @@ $mysqli->close();
     <head>
         <!-- <link rel="stylesheet" href="leaderboard.css"> -->
         <style>
-            html,body{
-                font-size: 20px;
+             html,body{
+                font-size: 26px;
                 font-family: sans-serif;
                 margin: 0%;
                 padding: 0%;
@@ -40,8 +40,9 @@ $mysqli->close();
             p{
                 text-align: center;
                 position: relative;
-                top: 30px;
-                
+                top: 8%;
+                font-size: 30px;
+
             }
             .table{
                 position: relative;
@@ -57,7 +58,7 @@ $mysqli->close();
                 display: inline-block;
                 border: 2px solid #ed802d;
                 text-align:left;
-                font-size: 20px;
+                font-size: 26px;
                 padding: 10px;
                 border-radius: 10px;
             }
@@ -74,12 +75,12 @@ $mysqli->close();
                 width: 15%;
                 border-radius: 40px;
                 left: 42.5%;
-                top: 12%;
+                top: 17%;
             }
 
             a{
                 font-family: sans-serif;
-                font-size: 20px;
+                font-size: 26px;
                 text-decoration: none;
                 color: white;
             }

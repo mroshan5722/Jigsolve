@@ -1,17 +1,24 @@
+h3{
+    font-size: 40px;
+}
 .content{
     position: relative;
-    top: 50px;
-    
-}
-label{
-    position: relative;
-    left: 37%;
-    font-size: 20px;
+    top: 30px;
+    width: 100%;    
+    text-align: center;
     font-family: sans-serif;
 
 }
-input{
+label{
+    text-align: left;
     position: relative;
+    left: -10%;
+    font-size: 20px;
+    text-align: left;
+
+}
+
+input{
     padding: 15px 20px;
     margin: 10px 0;
     box-sizing: border-box;
@@ -48,6 +55,9 @@ button{
 }
 
 input[type=text]:focus{
+    outline: 1.5px solid #ed802d;
+}
+input[type=email]:focus{
     outline: 1.5px solid #ed802d;
 }
 
