@@ -87,7 +87,7 @@ color: white;
     left: 30px;
     top: -15px;
 }
-.form{
+.formSuccess,.formFail{
     
     display: none;
     

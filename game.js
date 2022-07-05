@@ -32,9 +32,6 @@ $(document).ready(function(){
         $(".piece_container").empty();
     });
 
-    $(".submit").click(function(){
-    });
-
     function createPieces(withImage){
         var rows = 4, cols = 4;
         var pieces = "";
@@ -63,17 +60,16 @@ $(document).ready(function(){
             var order = item.data("order")
             //if pieces not in order
             if(k!=order){
-                $(".piece_container").text("try again");
-                window.open("leaderboardFail.html");
                 gameOver();
+                updateScore();
                 return false;
             }
         }
         
         $(".piece_container").text("Success");
         $(".reset").hide();
-        $(".form").show();
-        gameOver();
+        $(".formSuccess").show();
+        gameWon();
         updateScore();
         var num = document.getElementById("score").innerHTML;
         console.log(num);
@@ -117,7 +113,6 @@ $(document).ready(function(){
         var newTime = document.getElementById("time").innerHTML;
         var newscore = parseInt(newTime) * 3;
         document.getElementById("score").innerHTML = newscore;
-    }
-    
+    }        
 });
 

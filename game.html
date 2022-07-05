@@ -4,11 +4,11 @@
         <link ref = "spreadsheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.min.css"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
              
-        <!-- <style>
+        <style>
         body{
             background-color: rgb(255, 255, 255);
         }
-        
+
         .navbar{
             background-color: #4473c4;
             border: 2px solid  #2f528f;
@@ -17,7 +17,7 @@
             color: white;
             /* margin: 20px; */
         }
-        
+
         .container{
             width: 830px;
             border: 2px solid #2f528f;
@@ -39,7 +39,7 @@
             font-size: 30px;
             line-height: 400px;
             background-color:white;
-        
+
         }
         .puzzle_container{
             width: 406px;
@@ -47,11 +47,14 @@
             border: 1px solid #2f528f;
             float: right;
             background-color:white;
-        
+
         }
         .buttons{
+            position: relative;
+            left: -2%;
             list-style-type: none;
             text-align: center;
+            /* display: none; */
         }
         .buttons button{
         width: 200px;
@@ -63,7 +66,7 @@
         color: white;
         /* margin-top: 10px; */
         }
-        
+
         .reset{
             display: none;
         }
@@ -75,7 +78,7 @@
             background-image:url(wolf.jpg);
             background-repeat: no-repeat;
         }
-        
+
         .countdown{
             position: relative;
             float: right;
@@ -83,7 +86,7 @@
             font-size: 30px;
             top: -15px;
         }
-        
+
         .scoreboard{
             position: relative;
             float: left;
@@ -91,7 +94,25 @@
             left: 30px;
             top: -15px;
         }
-        </style> -->
+        .formSuccess,.formFail{
+            
+            display: none;
+            
+        }
+        input#scoreHolder{
+        display: none;
+        }
+
+        input#submit{
+            width: 200px;
+            border: 2px solid #2f528f;
+            font-size: 30px;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #4473c4;
+            color: white;
+            }
+        </style>
         <!-- <script> 
 
             
@@ -196,7 +217,7 @@
                 }
             });
         </script> -->
-    <link rel="stylesheet" href="game.css">
+    <!-- <link rel="stylesheet" href="game.css"> -->
     </head>
     <body>
         <div class = "navbar">
@@ -213,7 +234,11 @@
         <ul class="buttons">
             <li><button class="start" onclick="start()">Start</button></li>
             <li><button class="reset" onclick="resetTimer()">Reset</button></li>
-            <form class = "form" action="score.php" method="post">
+            <form class = "formSuccess" action="scoreSuccess.php" method="post">
+                <input type="number" id="scoreHolder" name="scoreHolder" value="000">
+                <input type="submit" id="submit" value="Leaderboard">
+            </form>
+            <form class = "formFail" action="scoreFail.php" method="post">
                 <input type="number" id="scoreHolder" name="scoreHolder" value="000">
                 <input type="submit" id="submit" value="Leaderboard">
             </form>

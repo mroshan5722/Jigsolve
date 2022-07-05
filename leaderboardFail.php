@@ -118,30 +118,8 @@ $mysqli->close();
     </style>
 </head>
     <body>
-        <?php
-        while($rows=$name->fetch_assoc()){
-            ?>
-        <p>Congratulations 
-            <?php
-                echo $rows['name']
-            ?>
-        ! </p>
-        <?php
-            }
-            ?>
-        <?php
-        while($rows=$score->fetch_assoc()){
-            ?>
-        <p>Your Score is 
-            <?php
-                echo $rows['score']
-            ?>
-        </p>
-        <?php
-            }
-            ?>
+        <p>Better luck next time!</p>
             <div class = "table">
-            <!-- ------------------------------------------------------------ -->
             <table class = "name">
                 <tr>
                     <th>Name</th>
