@@ -13,16 +13,11 @@ if ($mysqli->connect_error) {
     $mysqli->connect_error);
 }
 // SQL query to select data from database
-// $sql = " SELECT name FROM users ORDER BY ID DESC LIMIT 5";
-// $names = $mysqli->query($sql);
 $sql = " SELECT name,score from users,leaderboard where users.ID = leaderboard.ID ORDER by score DESC LIMIT 5;";
 $leaderboard = $mysqli->query($sql);
 
 $sql = " SELECT name FROM users ORDER BY ID DESC LIMIT 1";
 $name = $mysqli->query($sql);
-
-// $sql = " SELECT score FROM leaderboard ORDER BY Score DESC LIMIT 5";
-// $scores = $mysqli->query($sql);
 
 $sql = " SELECT score FROM leaderboard ORDER BY ID DESC LIMIT 1";
 $score = $mysqli->query($sql);
@@ -50,51 +45,34 @@ $mysqli->close();
         }
         .table{
             position: relative;
-            left: 35%;
+            width: 100%;
             top: 50px;
+            text-align: center;
+            
 
         }
 
-        .name{
+        table{
+            max-width: 30%;
             display: inline-block;
-            position: relative;
-            left: 10px;
-            border-top: 2px solid #ed802d;
-            border-bottom: 2px solid #ed802d;
-            border-left: 2px solid #ed802d;
+            border: 2px solid #ed802d;
             text-align:left;
             font-size: 20px;
             padding: 10px;
-            width: 300px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-
+            border-radius: 10px;
         }
-        .score{
-            display: inline-block;
-            position: relative;
-            border-top: 2px solid #ed802d;
-            border-bottom: 2px solid #ed802d;
-            border-right: 2px solid #ed802d;
-            text-align:left;
-            font-size: 20px;
-            padding: 10px;
-            width: 100px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
+       td{
+        padding-right: 20px;
+       }
         
         button{
             border: 2px solid #2f528f;
             background-color: #4473c4;
             position: relative;
-            /* left: 50px;
-            top: 10px; */
             padding: 15px 20px;
             margin: 10px 0;
             width: 15%;
             border-radius: 40px;
-            /* position: relative; */
             left: 42.5%;
             top: 12%;
         }
@@ -166,23 +144,6 @@ $mysqli->close();
                 ?>
             </tr>  
         </table>
-        <!-- <table class = "score">
-            <tr>
-                <th>Score</th>
-            </tr>
-            <?php
-                while($rows=$scores->fetch_assoc())
-                {
-            ?>
-            <tr>
-            <td>
-                <?php echo $rows['score'];?></td>
-                <?php
-                    }
-                ?>
-            </tr>
-        </table> -->
-        
         </div>
         <button><a href="index.html">HOME</a></button>
         <script src="game.js"></script>
