@@ -25,8 +25,6 @@ $score = $mysqli->query($sql);
 $mysqli->close();
 ?>
 
-
-<!-- HTML code to display data in tabular format -->
 <html>
     <head>
         <!-- <link rel="stylesheet" href="leaderboard.css"> -->
@@ -99,54 +97,40 @@ $mysqli->close();
         </style>
     </head>
     <body>
-        <?php
-        while($rows=$name->fetch_assoc()){
-            ?>
-        <p>Congratulations 
-            <?php
-                echo $rows['name']
-            ?>
+        <?php while($rows=$name->fetch_assoc()){ ?>
+        <p>Congratulations <?php echo $rows['name'] ?>
         ! </p>
-        <?php
-            }
-            ?>
-        <?php
-        while($rows=$score->fetch_assoc()){
-            ?>
+        <?php } ?>
+
+        <?php while($rows=$score->fetch_assoc()){ ?>
         <p>Your Score is 
-            <?php
-                echo $rows['score']
-            ?>
+            <?php echo $rows['score'] ?>
         </p>
-        <?php
-            }
-            ?>
+        <?php } ?>
+
             <div class = "table">
-            <!-- ------------------------------------------------------------ -->
             <table>
                 <tr>
                     <th>Name</th>
                     <th>Score</th>
-
                 </tr>
-            <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-            <?php
-                while($rows=$leaderboard->fetch_assoc())
-                {
-            ?>
-            <tr>
-                <td class = "name">
-                <?php echo $rows['name'];?></td>
-                <td>
-                <?php echo $rows['score'];?>
-                </td class = "score">
+                <!-- PHP CODE TO FETCH DATA FROM ROWS -->
                 <?php
-                    }
+                    while($rows=$leaderboard->fetch_assoc())
+                    {
                 ?>
-            </tr>  
-        </table>
+                <tr>
+                    <td><?php echo $rows['name'];?></td>
+                    <td><?php echo $rows['score'];?></td>
+                    <?php
+                        }
+                    ?>
+                </tr>  
+            </table>
         </div>
         <button><a href="index.html">HOME</a></button>
         <script src="game.js"></script>
+        <source src="Sounds/Celeboard.mp3" type="audio/ogg">
+        <embed src="Sounds/Celeboard.mp3" autostart="true" loop="true" hidden="true"> 
     </body>
 </html>

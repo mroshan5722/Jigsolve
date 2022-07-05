@@ -7,8 +7,8 @@ $(document).ready(function(){
     $(".start").click(function(){
         var pieces = $(".puzzle_container div");
         pieces.each(function(){
-            var leftPosition = Math.floor(Math.random()*290) + "px";
-            var topPosition = Math.floor(Math.random()*290) + "px";
+            var leftPosition = Math.floor(Math.random() *890)  + "px";
+            var topPosition = Math.floor(Math.random() *380) + "px";
             $(this).addClass("draggable").css({
                 position:"absolute",
                 left:leftPosition,
@@ -31,7 +31,8 @@ $(document).ready(function(){
         $(".puzzle_container").html(newPieces);
         $(this).hide();
         $(".start").show();
-        $(".piece_container").empty();
+        $(".piece").hide();
+        // $(".piece_container").empty();
     });
 
     //function to create pieces and grid
@@ -40,8 +41,8 @@ $(document).ready(function(){
         var pieces = "";
             //top,left = position of peice
             //order = order of peices in grid 
-        for (var i=0, top=0, order = 0; i<rows; i++, top-=100){
-            for (var j=0, left=0; j<cols; j++, left-=100,order++){
+        for (var i=0, top=0, order = 0; i<rows; i++, top-=105){
+            for (var j=0, left=0; j<cols; j++, left-=105,order++){
                 if (withImage){
                     pieces += "<div style='background-position:" + left + "px " + top + "px;' class = 'piece' data-order=" + order + "></div>";
                 }
@@ -64,15 +65,11 @@ $(document).ready(function(){
             var order = item.data("order")
             //if pieces not in order
             if(k!=order){
-                var fail = new Audio('Sounds/Fail.mp3');
-                fail.play();
                 gameOver();
                 updateScore();
                 return false;
             }
         }
-        var celeb = new Audio('Sounds/Celebration.mp3');
-        celeb.play();
         gameWon();
         updateScore();
         var num = document.getElementById("score").innerHTML;
@@ -109,8 +106,6 @@ $(document).ready(function(){
                     left:0,
                     position:"relative"
                 }).appendTo(droppedOn);
-                var drop = new Audio('Sounds/Drop.mp3');
-                drop.play();
                 puzzleSolved();
             }
         });
@@ -122,5 +117,18 @@ $(document).ready(function(){
         var newscore = parseInt(newTime) * 3;
         document.getElementById("score").innerHTML = newscore;
     }        
+    function generateRandom(min,max) {
+        // var lft = Math.floor(Math.random() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // if(lft<20||lft>)
+        // return (num === 8 || num === 15) ? generateRandom(15,890) : num;
+    }
+    function generateRandom(min,max) {
+        var tp = Math.floor(Math.random() * (max - min + 1)) + min;
+        // if(lft<20||lft>)
+        // return (num === 8 || num === 15) ? generateRandom() : num;
+    }
+    var test = generateRandom(1, 20)
 });
 

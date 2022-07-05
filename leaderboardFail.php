@@ -101,7 +101,6 @@ $mysqli->close();
     <body>
         <P>Better luck next time!</P>
         <div class = "table">
-            <!-- ------------------------------------------------------------ -->
             <table>
                 <tr>
                     <th>Name</th>
@@ -123,5 +122,7 @@ $mysqli->close();
         </div>
         <button><a href="index.html">HOME</a></button>
         <script src="game.js"></script>
+        <source src="Sounds/Failboard.mp3" type="audio/ogg">
+        <embed src="Sounds/Failboard.mp3" autostart="true" loop="true" hidden="true"> 
     </body>
 </html>

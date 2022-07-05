@@ -6,26 +6,29 @@ body{
     background-color: #4473c4;
     border: 2px solid  #2f528f;
     padding: 20px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     color: white;
-    /* margin: 20px; */
+    /* margin: 0px; */
 }
 
 .container{
-    width: 830px;
+    width: 80%;
     border: 2px solid #2f528f;
     border-radius: 20px;
     margin: 10px auto;
     padding: 10px;
-    height: 73%;
+    height: 95%;
     position: relative;
     background-color:#4473c4;
     /* top: 60px; */
 }
 .piece_container{
-    position: relative;
-    width: 406px;
-    height: 406px;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
     border: 1px solid #2f528f;
     float: left;
     text-align: center;
@@ -35,10 +38,13 @@ body{
 
 }
 .puzzle_container{
-    width: 406px;
-    height: 406px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 426px;
+    height: 426px;
     border: 1px solid #2f528f;
-    float: right;
+    float: middle;
     background-color:white;
 
 }
@@ -57,15 +63,15 @@ border-radius: 5px;
 padding: 5px;
 background-color: #4473c4;
 color: white;
-/* margin-top: 10px; */
+margin-top: 5px;
 }
 
 .reset{
     display: none;
 }
 .piece{
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 0.5px solid rgba(56, 56, 56, 0.082);
     float: left;
     background-image:url(wolf.jpg);
@@ -105,20 +111,3 @@ input#submit{
     background-color: #4473c4;
     color: white;
     }
-
-@media screen and (max-width: 1450px){  
-    .container{
-        height: 73%;
-    }
-}
-@media screen and (max-width: 900px){  
-    .container{
-        height: 55%;
-    }
-}
-@media screen and (max-width: 1250px){  
-    .container{
-        height: 65%;
-    }
-}
-

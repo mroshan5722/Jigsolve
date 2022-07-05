@@ -5,9 +5,8 @@ var timeLeft = 60;
 function gameOver() {
   // This cancels the setInterval, so the updateTimer stops getting called
   clearInterval(timer);
-  console.log("over");
   $(".piece_container").empty();
-  $(".piece_container").text("try again");
+  $(".piece_container").text("Better Luck Next Time!!");
   $(".reset").hide();
   $(".formFail").show();
   var newPieces = createPieces(true);
@@ -16,6 +15,9 @@ function gameOver() {
 
 function gameWon(){
   clearInterval(timer);
+  $(".piece_container").text("Yayy Congatulations!!");
+  $(".reset").hide();
+  $(".formSuccess").show();
 }
 
 function resetTimer(){

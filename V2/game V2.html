@@ -112,21 +112,6 @@
             background-color: #4473c4;
             color: white;
             }
-            @media screen and (max-width: 1450px){  
-                .container{
-                    height: 73%;
-                }
-            }
-            @media screen and (max-width: 1275px){  
-                .container{
-                    height: 65%;
-                }
-            }
-            @media screen and (max-width: 900px){  
-                .container{
-                    height: 50%;
-                }
-            }
         </style> -->
         <!-- <script> 
 
@@ -232,33 +217,36 @@
                 }
             });
         </script> -->
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="game V2.css">
     </head>
     <body>
-        <div class = "navbar">
-            <!-- <ul> -->
-                <div class = "countdown">00:<span id = "time" class = "timer">00</span></div>
-                <div class = "scoreboard">Score: <span id = "score">000</span></div>
-            <!-- </ul> -->
-            
-        </div>
         <div class = "container">
-            <div class = "puzzle_container"></div>
-            <div class="piece_container"></div>
+            <div class = "navbar">
+                <div class = "countdown">00:<span id = "time" class = "timer">00</span></div>
+                <div class = "scoreboard">Score: <span id = "score">000</span></div>            
+            </div>
+            <div class = "piece_container">
+                <div class = "puzzle_container"></div>
+            </div>
+            <ul class = "buttons">
+                <li><button class="start" onclick="start()">Start</button></li>
+                <li><button class="reset" onclick="resetTimer()">Reset</button></li>
+                <form class = "formSuccess" action="scoreSuccess.php" method="post">
+                    <input type="number" id="scoreHolder" name="scoreHolder" value="000">
+                    <input type="submit" id="submit" value="Leaderboard">
+                </form>
+                <form class = "formFail" action="scoreFail.php" method="post">
+                    <input type="number" id="scoreHolder" name="scoreHolder" value="000">
+                    <input type="submit" id="submit" value="Leaderboard">
+                </form>
+            </ul>
         </div>
-        <ul class="buttons">
-            <li><button class="start" onclick="start()">Start</button></li>
-            <li><button class="reset" onclick="resetTimer()">Reset</button></li>
-            <form class = "formSuccess" action="scoreSuccess.php" method="post">
-                <input type="number" id="scoreHolder" name="scoreHolder" value="000">
-                <input type="submit" id="submit" value="Leaderboard">
-            </form>
-            <form class = "formFail" action="scoreFail.php" method="post">
-                <input type="number" id="scoreHolder" name="scoreHolder" value="000">
-                <input type="submit" id="submit" value="Leaderboard">
-            </form>
-        </ul>
-       <script src="game.js"></script>
+        
+        <!-- <form class = "form" action="score.php" method="post">
+            <input type="submit" id="submit" value="SUBMIT">
+        </form> -->
+
+       <script src="game V2.js"></script>
        <script src="countdown.js"></script>
     </body>
 </html>
