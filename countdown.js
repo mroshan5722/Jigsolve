@@ -1,5 +1,5 @@
 var timer; 
-var timeLeft = 5; 
+var timeLeft = 60; 
 
 // What to do when the timer runs out
 function gameOver() {

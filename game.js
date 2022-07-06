@@ -117,4 +117,3 @@ $(document).ready(function(){
         document.getElementById("score").innerHTML = newscore;
     }        
 });
-
