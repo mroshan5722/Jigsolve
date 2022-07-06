@@ -99,13 +99,13 @@ $mysqli->close();
     </head>
     <body>
         <?php while($rows=$name->fetch_assoc()){ ?>
-        <p>Congratulations <?php echo $rows['name'] ?>
+        <p>Congratulations <b><?php echo $rows['name'] ?></b>
         ! </p>
         <?php } ?>
 
         <?php while($rows=$score->fetch_assoc()){ ?>
         <p>Your Score is 
-            <?php echo $rows['score'] ?>
+           <b> <?php echo $rows['score'] ?> <b>
         </p>
         <?php } ?>
 

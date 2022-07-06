@@ -1,10 +1,12 @@
 var timer; 
-var timeLeft = 60; 
+var timeLeft = 5; 
 
 // What to do when the timer runs out
 function gameOver() {
   // This cancels the setInterval, so the updateTimer stops getting called
   clearInterval(timer);
+  var fail = new Audio('Sounds/Fail.mp3');
+  fail.play();
   $(".piece_container").empty();
   $(".piece_container").text("Better Luck Next Time!!");
   $(".reset").hide();
@@ -15,6 +17,8 @@ function gameOver() {
 
 function gameWon(){
   clearInterval(timer);
+  var celeb = new Audio('Sounds/Celebration.mp3');
+  celeb.play();
   $(".piece_container").text("Yayy Congatulations!!");
   $(".reset").hide();
   $(".formSuccess").show();
@@ -36,6 +40,7 @@ function updateTimer() {
   }
   else {
     gameOver();
+    updateScore();
   }
 }
 
@@ -44,7 +49,7 @@ function start() {
   updateTimer();
 }
 
-function createPieces(withImage){
+function createPieces(){
   var rows = 4, cols = 4;
   var pieces = "";
       //top,left = position of peice
@@ -55,3 +60,9 @@ function createPieces(withImage){
       }
   } return pieces;
 }
+function updateScore(){
+  var newTime = document.getElementById("time").innerHTML;
+  var newscore = parseInt(newTime) * 3;
+  console.log(newscore);
+  document.getElementById("score").innerHTML = newscore;
+}    

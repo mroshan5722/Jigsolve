@@ -64,21 +64,15 @@ $(document).ready(function(){
             var order = item.data("order")
             //if pieces not in order
             if(k!=order){
-                var fail = new Audio('Sounds/Fail.mp3');
-                fail.play();
                 gameOver();
                 updateScore();
                 return false;
             }
         }
-        var celeb = new Audio('Sounds/Celebration.mp3');
-        celeb.play();
         gameWon();
         updateScore();
         var num = document.getElementById("score").innerHTML;
-        // console.log(num);
         document.getElementById("scoreHolder").value = num;
-        // console.log(scoreHolder.value);
         return true;
     }
 
